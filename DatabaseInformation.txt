@@ -1,0 +1,4 @@
+astonl.database.windows.net
+database: first
+user: AstonL
+password: wgz123$%^
