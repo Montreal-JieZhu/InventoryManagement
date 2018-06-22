@@ -394,6 +394,9 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_MyMasterLayout.cshtml" />
     <Content Include="Views\HomePage\Index.cshtml" />
+    <Content Include="Views\Shared\_MyNavbar.cshtml" />
+    <Content Include="Views\Shared\_MyLeftSideBar.cshtml" />
+    <Content Include="Views\Shared\cachePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
