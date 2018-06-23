@@ -220,6 +220,7 @@
     <Content Include="assets\img\favicon.png" />
     <Content Include="assets\img\login-bg.jpg" />
     <Content Include="assets\img\logo-dark.png" />
+    <Content Include="assets\img\Logo.png" />
     <Content Include="assets\img\profile-bg.png" />
     <Content Include="assets\img\user-medium.png" />
     <Content Include="assets\img\user.png" />
