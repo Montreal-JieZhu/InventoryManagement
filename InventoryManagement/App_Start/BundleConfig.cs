@@ -38,10 +38,13 @@ namespace InventoryManagement
             bundles.Add(new ScriptBundle("~/MyLayoutScript/js").Include(
                 "~/assets/vendor/jquery/jquery.min.js",
                 "~/assets/vendor/bootstrap/js/bootstrap.min.js",
-                      "~/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js",
-                      "~/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js",
-                      "~/assets/vendor/chartist/js/chartist.min.js",
+                      "~/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js",                      
                       "~/assets/scripts/klorofil-common.js"));
+
+            bundles.Add(new ScriptBundle("~/MyChartist/js").Include(                
+                      "~/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js",
+                      "~/assets/vendor/chartist/js/chartist.min.js"
+                      ));
         }
     }
 }

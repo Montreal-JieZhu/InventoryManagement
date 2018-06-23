@@ -2,8 +2,17 @@
     <div class="sidebar-scroll">
         <nav>
             <ul class="nav">
-                <li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-                <li><a href="elements.html" class=""><i class="lnr lnr-code"></i> <span>Elements</span></a></li>
+                <li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
+                <li>
+                    <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>PO</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                    <div id="subPages" class="collapse ">
+                        <ul class="nav">
+                            <li>@Html.ActionLink("Create", "Index", "ExampleForm", routeValues: null, htmlAttributes: new { className = "" })</li>
+                            <li><a href="page-login.html" class="">Whatever</a></li>                            
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="@Url.Content("~/ExampleForm/Index")" class=""><i class="lnr lnr-code"></i> <span>Greate PO</span></a></li>
                 <li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
                 <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
                 <li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>
