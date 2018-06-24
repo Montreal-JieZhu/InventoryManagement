@@ -203,10 +203,46 @@
     <Compile Include="Migrations\201806220333083_InitializeInventorySystem.Designer.cs">
       <DependentUpon>201806220333083_InitializeInventorySystem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806240409019_AddMaterialAndBOMTable.cs" />
+    <Compile Include="Migrations\201806240409019_AddMaterialAndBOMTable.Designer.cs">
+      <DependentUpon>201806240409019_AddMaterialAndBOMTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806241306060_AddWOTables.cs" />
+    <Compile Include="Migrations\201806241306060_AddWOTables.Designer.cs">
+      <DependentUpon>201806241306060_AddWOTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806241441471_AddStockPostingTables.cs" />
+    <Compile Include="Migrations\201806241441471_AddStockPostingTables.Designer.cs">
+      <DependentUpon>201806241441471_AddStockPostingTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806241448473_UpdateStatusFieldsForWO.cs" />
+    <Compile Include="Migrations\201806241448473_UpdateStatusFieldsForWO.Designer.cs">
+      <DependentUpon>201806241448473_UpdateStatusFieldsForWO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806241457535_Add_PO_SO_Tables.cs" />
+    <Compile Include="Migrations\201806241457535_Add_PO_SO_Tables.Designer.cs">
+      <DependentUpon>201806241457535_Add_PO_SO_Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806241533470_ADDConstraintsToTables.cs" />
+    <Compile Include="Migrations\201806241533470_ADDConstraintsToTables.Designer.cs">
+      <DependentUpon>201806241533470_ADDConstraintsToTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BOM_Header.cs" />
+    <Compile Include="Models\BOM_Item.cs" />
+    <Compile Include="Models\ConstantsDefinition.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\PO_Header.cs" />
+    <Compile Include="Models\PO_Item.cs" />
+    <Compile Include="Models\SO_Header.cs" />
+    <Compile Include="Models\SO_Item.cs" />
+    <Compile Include="Models\StockPosting_Header.cs" />
+    <Compile Include="Models\StockPosting_Item.cs" />
+    <Compile Include="Models\WO_Item.cs" />
+    <Compile Include="Models\WO_Header.cs" />
     <Compile Include="Models\testModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -418,6 +454,24 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806220333083_InitializeInventorySystem.resx">
       <DependentUpon>201806220333083_InitializeInventorySystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806240409019_AddMaterialAndBOMTable.resx">
+      <DependentUpon>201806240409019_AddMaterialAndBOMTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806241306060_AddWOTables.resx">
+      <DependentUpon>201806241306060_AddWOTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806241441471_AddStockPostingTables.resx">
+      <DependentUpon>201806241441471_AddStockPostingTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806241448473_UpdateStatusFieldsForWO.resx">
+      <DependentUpon>201806241448473_UpdateStatusFieldsForWO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806241457535_Add_PO_SO_Tables.resx">
+      <DependentUpon>201806241457535_Add_PO_SO_Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806241533470_ADDConstraintsToTables.resx">
+      <DependentUpon>201806241533470_ADDConstraintsToTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
