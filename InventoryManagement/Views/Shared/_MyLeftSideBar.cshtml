@@ -2,13 +2,17 @@
     <div class="sidebar-scroll">
         <nav>
             <ul class="nav">
-                <li><a href="@Url.Content("~/")"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
+                <li><a href="@Url.Content("~/")"><i class="lnr lnr-home"></i> <span>Home</span></a>
+                </li>
+
+
+
                 <li>
                     <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-dice"></i> <span>PO</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                     <div id="subPages" class="collapse ">
                         <ul class="nav">
                             <li>@Html.ActionLink("Create", "Index", "ExampleForm", routeValues: null, htmlAttributes: new { className = "" })</li>
-                            <li><a href="page-login.html" class="">Whatever</a></li>                            
+                            <li><a href="page-login.html" class="">Whatever</a></li>
                         </ul>
                     </div>
                 </li>

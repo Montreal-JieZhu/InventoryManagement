@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "MaterialForm";
+    Layout = "~/Views/Shared/_MyMasterLayout.cshtml";
+}
+
+<script>
+    var materialCount = 1;
+    function AddMaterial(plusElement) {
+        $(plusElement).parent().parent().clone().appendTo($(plusElement).parent().parent().parent());
+        materialCount++;
+    }
+    function DeleteMaterial(delElement) {
+        if ((materialCount - 1) != 0) {
+            $(delElement).parent().parent().remove();
+            materialCount--;
+        }
+    }
+</script>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="page-title">New Material</h2>
+        <!-- PANEL WITH FOOTER -->
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="right">
+                    <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+                </div>
+            </div>
+            <form id="POCreateForm">
+                <div class="panel-body">
+                    <h3>Header:</h3>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="ID">ID:</label>
+                                <input type="text" name="ID" class="form-control" placeholder="ID">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="Supplier">Supplier:</label>
+                                <input type="text" name="Supplier" class="form-control" placeholder="Supplier">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="DeliveryDate">Supplier:</label>
+                                <input type="text" name="DeliveryDate" class="form-control" placeholder="Delivery Date">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="Amount">Total Amount:</label>
+                                <input type="text" name="Amount" class="form-control" placeholder="Total Amount">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="POItems">PO Items:</label>
+                                <input type="text" name="POItems" class="form-control" placeholder="PO Items">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <h4>PO Items:</h4>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="MaterialID">MaterialID:</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="Quantity">Quantity:</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="Price">Price:</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="Status">Status:</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <input type="text" name="MaterialID" class="form-control" placeholder="MaterialID">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="text" name="Quantity" class="form-control" placeholder="Quantity">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="text" name="Price" class="form-control" placeholder="Price">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <input type="text" name="Status" class="form-control" placeholder="Status">
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" onclick="AddMaterial(this)">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" onclick="DeleteMaterial(this)">
+                                <span class="lnr lnr-trash"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-10">
+                <button type="submit" form="POCreateForm" class="btn btn-primary">Submit</button>
+            </div>
+
+        </div>
+        <!-- END PANEL FOOTER -->
+    </div>
+</div>
