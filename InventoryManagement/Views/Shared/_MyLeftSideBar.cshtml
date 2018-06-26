@@ -2,37 +2,28 @@
     <div class="sidebar-scroll">
         <nav>
             <ul class="nav">
-                <li><a href="@Url.Content("~/")"><i class="lnr lnr-home"></i> <span>Home</span></a>
-                </li>
-
-
-
                 <li>
-                    <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-dice"></i> <span>PO</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                    <a href="@Url.Content("~/")"><i class="lnr lnr-home"></i> <span>Material</span></a>
+                </li>                
+                <li>
+                    <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-dice"></i> <span>Master Manage</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                     <div id="subPages" class="collapse ">
                         <ul class="nav">
-                            <li>@Html.ActionLink("Create", "Index", "ExampleForm", routeValues: null, htmlAttributes: new { className = "" })</li>
-                            <li><a href="page-login.html" class="">Whatever</a></li>
+                            <li>@Html.ActionLink("Material", "Index", "Material", null, null)</li>
+                            <li>@Html.ActionLink("BOM", "Index", "BOM", null, null)</li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="@Url.Content("~/ExampleForm/Index")" class=""><i class="lnr lnr-code"></i> <span>Greate PO</span></a></li>
-                <li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
-                <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
-                <li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>
                 <li>
-                    <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                    <div id="subPages" class="collapse ">
+                    <a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-dice"></i> <span>Work Order</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                    <div id="subPages2" class="collapse ">
                         <ul class="nav">
-                            <li><a href="page-profile.html" class="">Profile</a></li>
-                            <li><a href="page-login.html" class="">Login</a></li>
-                            <li><a href="page-lockscreen.html" class="">Lockscreen</a></li>
+                            <li>@Html.ActionLink("WO-Create", "ChooseProduct", "WorkOrder", null, null)</li>
+                            <li>@Html.ActionLink("WO-GI", "EnterReferenceOrder", "StockPosting", new { PostingType = 2 }, null)</li>
+                            <li>@Html.ActionLink("WO-GR", "EnterReferenceOrder", "StockPosting", new { PostingType = 3 }, null)</li>
                         </ul>
                     </div>
-                </li>
-                <li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Tables</span></a></li>
-                <li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>Typography</span></a></li>
-                <li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li>
+                </li>                
             </ul>
         </nav>
     </div>

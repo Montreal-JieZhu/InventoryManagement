@@ -504,3 +504,5 @@ E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManage
 E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.UpdateStatusFieldsForWO.resources
 E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.Add_PO_SO_Tables.resources
 E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.ADDConstraintsToTables.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Debug\InventoryManagement.csprojResolveAssemblyReference.cache
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.TestMigration.resources

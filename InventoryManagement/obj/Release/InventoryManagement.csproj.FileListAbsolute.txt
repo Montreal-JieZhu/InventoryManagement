@@ -247,3 +247,12 @@ E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManage
 E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.UpdateStatusFieldsForWO.resources
 E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.Add_PO_SO_Tables.resources
 E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.ADDConstraintsToTables.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.AddStatusTypeTableAndChangeFields.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.PopulateDataForTypeAndStatusTable.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.ChangeDBSetName.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.AddMaterialCodeIntoMaterialTable.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.ChangePostingType.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.UpdatePostingType.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.AddNewPostingType.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.ChangeType.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.TestMigration.resources
