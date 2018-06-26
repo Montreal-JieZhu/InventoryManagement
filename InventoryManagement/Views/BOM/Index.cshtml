@@ -1,0 +1,51 @@
+﻿@model IEnumerable<InventoryManagement.Models.BOM_Header>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyMasterLayout.cshtml";
+}
+
+<h2>All Available BOMs in the System</h2>
+
+@if (!Model.Any())
+{
+    <p>There are no BOMs</p>
+}
+else
+{
+    <p>
+        @Html.ActionLink("New BOM", "New", "BOM", null, new { @class = "btn btn-default" })
+    </p>
+
+   
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var BOM in Model)
+            {
+                <tr>
+                    <td>@BOM.Product.Name</td>
+                   
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "BOM", new { id = BOM.ID }, null) |
+                        @Html.ActionLink("Delete", "Delete", "Delete", new { id = BOM.ID }, null)
+                    </td>
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+}
+
+
+
+
+
+

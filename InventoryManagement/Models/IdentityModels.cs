@@ -37,6 +37,11 @@ namespace InventoryManagement.Models
         public DbSet<SO_Header> SO_Headers { get; set; }
         public DbSet<SO_Item> SO_Items { get; set; }
 
+        public DbSet<MaterialType> MaterialTypes { get; set; }
+        public DbSet<PostingType> PostingTypes { get; set; }
+        public DbSet<Status> Status { get; set; }
+
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

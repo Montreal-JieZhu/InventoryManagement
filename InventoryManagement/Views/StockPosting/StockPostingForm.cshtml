@@ -1,0 +1,136 @@
+﻿@model InventoryManagement.ViewModels.StockPostingViewModel
+
+@{
+    ViewBag.Title = "StockPostingForm";
+    Layout = "~/Views/Shared/_MyMasterLayout.cshtml";
+}
+
+<h2>StockPostingForm</h2>
+
+@if (Model.StockPosting_Header.PostingTypeID == 2)
+{
+    <h2 class="page-title">Work Order Good Issue</h2>
+}
+else if (Model.StockPosting_Header.PostingTypeID == 3)
+{
+    <h2 class="page-title">Work Order Good Receipt</h2>
+}
+
+
+@using (Html.BeginForm("Save", "StockPosting"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+
+
+
+    <div class="panel">
+        <div class="panel-heading">
+            <div class="left">
+                <H4>Header</H4>
+            </div>
+            <div class="right">
+                <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+            </div>
+        </div>
+
+        <div class="panel-body">
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.StockPosting_Header.ReferenceOrderID)
+                @Html.TextBoxFor(m => m.StockPosting_Header.ReferenceOrderID, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.StockPosting_Header.ReferenceOrderID)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.StockPosting_Header.DateCreated)
+                @Html.TextBoxFor(m => m.StockPosting_Header.DateCreated, "{0:yyyy-MM-dd}", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.StockPosting_Header.DateCreated)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.StockPosting_Header.PostingTypeID)
+                @Html.DropDownListFor(m => m.StockPosting_Header.PostingTypeID, new SelectList(Model.PostingTypes, "ID", "DisplayType"), "Please select a Posting Type", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.StockPosting_Header.PostingTypeID)
+            </div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-heading">
+            <div class="left">
+                <H4>Items</H4>
+            </div>
+            <div class="right">
+                <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+            </div>
+        </div>
+
+        <div class="panel-body">
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Item No.</th>
+                        <th>Material</th>
+                        <th>Quantity</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.StockPosting_Items.Count; i++)
+                    {
+                        <tr>
+                            <td>
+                                @(i + 1)
+                            </td>
+                            <td>
+
+                                @*Html.DropDownListFor(m => m.WO_Items[i].MaterialID, new SelectList(Model.RawMaterials, "ID", "DisplayName"), "Please select a Raw Material", new { @class = "form-control" })
+
+                                    // FIXME: Can not submit if I use selection list
+                                *@
+
+
+                                @Html.TextBoxFor(m => m.StockPosting_Items[i].MaterialID, new { @class = "form-control" })
+
+
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.StockPosting_Items[i].Quantity, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.StockPosting_Items[i].Quantity)
+
+                            </td>
+
+                        </tr>
+
+                        @Html.HiddenFor(m => m.StockPosting_Items[i].ID)
+                        @Html.HiddenFor(m => m.StockPosting_Items[i].StockPosting_HeaderID)
+
+                    }
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+
+    @Html.HiddenFor(m => m.StockPosting_Header.ID)
+    @Html.AntiForgeryToken();
+
+    <div class="row">
+        <div class="col-md-2 col-md-offset-10">
+            <button type="submit" class="btn btn-default">Save</button>
+        </div>
+    </div>
+
+
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+

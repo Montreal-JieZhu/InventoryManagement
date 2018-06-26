@@ -16,9 +16,9 @@ namespace InventoryManagement.Models
         public DateTime? DateCreated { get; set; }
 
         [Required]
-        [StringLength(5)]
-        public string Type { get; set; }
+        public byte PostingTypeID { get; set; }
 
         public virtual ICollection<StockPosting_Item> StockPosting_Items { get; set; }
+        public virtual PostingType PostingType { get; set; }
     }
 }

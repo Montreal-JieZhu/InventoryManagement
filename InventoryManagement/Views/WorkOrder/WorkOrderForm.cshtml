@@ -1,0 +1,143 @@
+﻿@model InventoryManagement.ViewModels.WorkOrderViewModel
+
+@{
+    ViewBag.Title = "WorkOrderForm";
+    Layout = "~/Views/Shared/_MyMasterLayout.cshtml";
+}
+
+@if (Model.WO_Header.ID == 0)
+{
+    <h2 class="page-title">Add New Work Order</h2>
+}
+else
+{
+    <h2 class="page-title">Edit Work ORder: @Model.WO_Header.Product.Name</h2>
+}
+
+
+@using (Html.BeginForm("Save", "WorkOrder"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+
+
+
+    <!-- PANEL WITH FOOTER -->
+    <div class="panel">
+        <div class="panel-heading">
+            <div class="left">
+                <H4>Header</H4>
+            </div>
+            <div class="right">
+                <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+            </div>
+        </div>
+
+        <div class="panel-body">
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.WO_Header.ProductID)
+                @*Html.TextBoxFor(m => m.WO_Header.ProductID, new { @class = "form-control" })*@
+                @Html.DropDownListFor(m => m.WO_Header.ProductID, new SelectList(Model.Products, "ID", "DisplayName"), "Please select a Product", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.WO_Header.ProductID)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.WO_Header.Quantity)
+                @Html.TextBoxFor(m => m.WO_Header.Quantity, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.WO_Header.Quantity)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.WO_Header.DueDate)
+                @Html.TextBoxFor(m => m.WO_Header.DueDate, "{0:yyyy-MM-dd}", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.WO_Header.DueDate)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.WO_Header.StatusID)
+                @Html.DropDownListFor(m => m.WO_Header.StatusID, new SelectList(Model.Status, "ID", "DisplayName"), "Please select a Status", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.WO_Header.StatusID)
+            </div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-heading">
+            <div class="left">
+                <H4>Items</H4>
+            </div>
+            <div class="right">
+                <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+            </div>
+        </div>
+
+        <div class="panel-body">
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Item No.</th>
+                        <th>Material</th>
+                        <th>Quantity</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.WO_Items.Count; i++)
+                    {
+                        <tr>
+                            <td>
+                                @(i + 1)
+                            </td>
+                            <td>
+
+                                @*Html.DropDownListFor(m => m.WO_Items[i].MaterialID, new SelectList(Model.RawMaterials, "ID", "DisplayName"), "Please select a Raw Material", new { @class = "form-control" })
+
+        // FIXME: Can not submit if I use selection list
+                                *@
+
+
+                                @Html.TextBoxFor(m => m.WO_Items[i].MaterialID, new { @class = "form-control" })
+
+
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.WO_Items[i].Quantity, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.WO_Items[i].Quantity)
+
+                            </td>
+                            <td>
+                                @Html.DropDownListFor(m => m.WO_Items[i].StatusID, new SelectList(Model.Status, "ID", "DisplayName"), "Please select a Status", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.WO_Items[i].StatusID)
+                            </td>
+                        </tr>
+
+                        @Html.HiddenFor(m => m.WO_Items[i].ID)
+                        @Html.HiddenFor(m => m.WO_Items[i].WO_HeaderID)
+
+                    }
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+
+    @Html.HiddenFor(m => m.WO_Header.ID)
+    @Html.AntiForgeryToken();
+
+    <div class="row">
+        <div class="col-md-2 col-md-offset-10">
+            <button type="submit" class="btn btn-default">Save</button>
+        </div>
+    </div>
+
+
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

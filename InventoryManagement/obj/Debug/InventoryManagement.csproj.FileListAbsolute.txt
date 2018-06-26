@@ -491,3 +491,11 @@ D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Mi
 D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.UpdateStatusFieldsForWO.resources
 D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.Add_PO_SO_Tables.resources
 D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.ADDConstraintsToTables.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.AddStatusTypeTableAndChangeFields.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.PopulateDataForTypeAndStatusTable.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.ChangeDBSetName.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.AddMaterialCodeIntoMaterialTable.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.ChangePostingType.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.UpdatePostingType.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.AddNewPostingType.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.ChangeType.resources

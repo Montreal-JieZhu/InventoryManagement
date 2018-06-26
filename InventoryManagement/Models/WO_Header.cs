@@ -19,11 +19,12 @@ namespace InventoryManagement.Models
         [Required]
         public DateTime DueDate { get; set; }
 
-        [StringLength(30)]
-        public string GRStatus { get; set;}
+
+        public byte StatusID { get; set;}
 
         public ICollection<WO_Item> WO_Items { get; set; }
         public Material Product { get; set; }
+        public Status Status { get; set; }
 
     }
 }

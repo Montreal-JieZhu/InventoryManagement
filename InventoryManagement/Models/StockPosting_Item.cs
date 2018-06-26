@@ -18,7 +18,7 @@ namespace InventoryManagement.Models
 
         [Required]
         [Range(1, 10000)]
-        public string Quantity { get; set; }
+        public double Quantity { get; set; }
 
         public virtual StockPosting_Header StockPosting_Header { get; set; }
         public virtual Material Material { get; set; }

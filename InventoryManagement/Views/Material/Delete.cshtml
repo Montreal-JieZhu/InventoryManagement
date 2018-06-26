@@ -1,0 +1,31 @@
+﻿@model InventoryManagement.Models.Material
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_MyMasterLayout.cshtml";
+}
+
+<h2>Delete Material Master</h2>
+
+<h3>Are you sure you want to delete this material master data?</h3>
+
+<div>
+    <dl>
+        <dt>@Html.DisplayNameFor(m => m.MaterialCode)</dt>
+        <dd>@Html.DisplayFor(m => m.MaterialCode)</dd>
+
+        <dt>@Html.DisplayNameFor(m => m.Name)</dt>
+        <dd>@Html.DisplayFor(m => m.Name)</dd>
+    </dl>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        @Html.ActionLink("Back to Material List", "Index", "Material")
+    </div>
+}
+
+
+

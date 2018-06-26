@@ -1,8 +1,61 @@
-﻿
+﻿@model IEnumerable<InventoryManagement.Models.Material>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MyMasterLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>All Material in the System</h2>
+
+@if (!Model.Any())
+{
+    <p>There are no materials</p>
+}
+else
+{
+    <p>
+        @Html.ActionLink("New Material", "New", "Material", null, new { @class = "btn btn-default" })
+    </p>
+
+    using (Html.BeginForm("Index", "Material", FormMethod.Get))
+    {
+        <p>
+            Find Material by Name: &nbsp; @Html.TextBox("searchString")
+            <input type="submit" value="Search" />
+        </p>
+    }
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Material Code</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var material in Model)
+            {
+            <tr>
+                <td>@material.MaterialCode</td>
+                <td>@material.Name</td>
+                <td>@material.Quantity</td>
+                <td>@material.Price</td>
+                <td>@material.MaterialType.Type</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Material", new { id = material.ID }, null) |
+                    @Html.ActionLink("Delete", "Delete", "Material", new { id = material.ID }, null)
+                </td>
+            </tr>
+
+            }
+
+        </tbody>
+    </table>
+}
+
+
+
 
