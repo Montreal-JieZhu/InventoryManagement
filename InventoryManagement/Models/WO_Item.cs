@@ -19,10 +19,11 @@ namespace InventoryManagement.Models
         [Required]
         public double Quantity { get; set; }
 
-        [StringLength(30)]
-        public string GIStatus { get; set; }
 
-        public WO_Header WO_Header { get; set; }
-        public Material Material { get; set; }
+        public byte StatusID { get; set; }
+
+        public virtual WO_Header WO_Header { get; set; }
+        public virtual Material Material { get; set; }
+        public virtual Status Status { get; set; }
     }
 }

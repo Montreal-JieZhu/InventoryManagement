@@ -11,6 +11,10 @@ namespace InventoryManagement.Models
         public int ID { get; set; }
 
         [Required]
+        [StringLength(40)]
+        public string MaterialCode { get; set; }
+
+        [Required]
         [StringLength(200)]
         public string Name { get; set; }
 
@@ -23,8 +27,17 @@ namespace InventoryManagement.Models
         public double Price { get; set; }
 
         [Required]
-        [StringLength(30)]
-        public string Type { get; set; }
+        public byte MaterialTypeID { get; set; }
 
+        public virtual MaterialType MaterialType { get; set; }
+
+
+        public string DisplayName
+        {
+            get
+            {
+                return MaterialCode + " - " + Name; 
+            }
+        }
     }
 }

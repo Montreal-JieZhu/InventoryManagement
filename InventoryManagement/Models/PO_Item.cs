@@ -23,10 +23,10 @@ namespace InventoryManagement.Models
         [Range(0, 100000)]
         public double? Price { get; set; }
 
-        [StringLength(30)]
-        public string GRStatus { get; set; }
+        public byte StatusID { get; set; }
 
         public virtual PO_Header PO_Header { get; set; }
         public virtual Material Material { get; set; }
+        public virtual Status Status { get; set; }
     }
 }

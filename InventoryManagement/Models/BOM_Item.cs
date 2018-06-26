@@ -13,7 +13,7 @@ namespace InventoryManagement.Models
         [Required]
         public int BOM_HeaderID { get; set; }
 
-        [Required]
+        [Required] 
         public int MaterialID { get; set; }
 
         [Required]

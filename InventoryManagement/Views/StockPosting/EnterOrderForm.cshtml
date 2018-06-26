@@ -1,0 +1,50 @@
+﻿@model InventoryManagement.ViewModels.EnterOrderViewModel
+
+@{
+    ViewBag.Title = "EnterOrderForm";
+    Layout = "~/Views/Shared/_MyMasterLayout.cshtml";
+}
+
+@switch (Model.PostingTypeID)
+{
+    // Can not use CONSTANTS
+    case "2":
+    case "3":
+        <h2>Please Enter a Work Order Number:</h2>
+        break;
+
+    default:
+        break;
+}
+
+
+
+@using (Html.BeginForm("New", "StockPosting"))
+{
+
+
+    <div class="panel">
+
+        <div class="panel-body">
+
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.OrderID)
+                @Html.TextBoxFor(m => m.OrderID, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.OrderID)
+            </div>
+
+        </div>
+    </div>
+
+    @Html.HiddenFor(m => m.PostingTypeID)
+
+    <div class="row">
+        <div class="col-md-2 col-md-offset-10">
+            <button type="submit" class="btn btn-default">Choose</button>
+        </div>
+    </div>
+
+
+}
+
