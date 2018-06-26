@@ -46,21 +46,17 @@ namespace InventoryManagement.Controllers
         {
             // Define view model object
             var viewModel = new StockPostingViewModel();
+            List<StockPosting_Item> spItems = new List<StockPosting_Item>();
+            StockPosting_Header spHeader = new StockPosting_Header();
+            StockPosting_Item spItem = null;
 
             switch (eoViewModel.PostingTypeID)
             {
                 // Work Order GI
                 case ConstantsDefintion.GOOD_ISSUE_WORK_ORDER:
 
-
-
-                    // Inistialize Stock posting items
-                    List<StockPosting_Item> spItems = new List<StockPosting_Item>();
-
-
-
                     // Based on Work order items 
-                    var woItems = _context.WO_Items.Where(w => w.WO_HeaderID == eoViewModel.OrderID).ToList(); ;
+                    var woItems = _context.WO_Items.Where(w => w.WO_HeaderID == eoViewModel.OrderID).ToList();
 
 
 
@@ -68,7 +64,7 @@ namespace InventoryManagement.Controllers
 
                     foreach (var item in woItems)
                     {
-                        StockPosting_Item spItem = new StockPosting_Item();
+                        spItem = new StockPosting_Item();
                         spItem.MaterialID = item.MaterialID;
                         spItem.Quantity = item.Quantity;
 
@@ -76,7 +72,41 @@ namespace InventoryManagement.Controllers
                     }
 
                     // Inistialize stock posting header
-                    StockPosting_Header spHeader = new StockPosting_Header();
+                    spHeader.ReferenceOrderID = eoViewModel.OrderID;
+                    spHeader.DateCreated = DateTime.Now;
+                    spHeader.PostingTypeID = byte.Parse(eoViewModel.PostingTypeID);
+
+
+
+                    // Initialize viewModel object
+
+                    viewModel.StockPosting_Header = spHeader;
+                    viewModel.StockPosting_Items = spItems;
+
+
+                    viewModel.Products = _context.Materials.Where(m => m.MaterialTypeID == MaterialType.FinishedProduct).ToList();
+                    viewModel.RawMaterials = _context.Materials.Where(m => m.MaterialTypeID == MaterialType.RawMaterial).ToList();
+
+                    viewModel.PostingTypes = _context.PostingTypes.ToList();
+
+                    break;
+
+                // Work Order GR
+                case ConstantsDefintion.GOOD_RECEIPT_WORK_ORDER:
+
+                    // Based on Work order Header, initialize stock posting item 
+                    var woHeader = _context.WO_Headers.Where(w => w.ID == eoViewModel.OrderID).Single();
+
+
+                    spItem = new StockPosting_Item();
+                    spItem.MaterialID = woHeader.ProductID;
+                    spItem.Quantity = woHeader.Quantity;
+
+                    spItems.Add(spItem);
+
+
+                    // Inistialize stock posting header
+
                     spHeader.ReferenceOrderID = eoViewModel.OrderID;
                     spHeader.DateCreated = DateTime.Now;
                     spHeader.PostingTypeID = byte.Parse(eoViewModel.PostingTypeID);
@@ -120,14 +150,15 @@ namespace InventoryManagement.Controllers
 
             // IF FORM IS VALID
 
-            // Add new device
+
+            // Add new stock posting record
             if (viewModel.StockPosting_Header.ID == 0)
             {
 
-                
 
-                // Deduct the current stock
-                foreach (var item in viewModel.StockPosting_Items) 
+
+                // ADD or Deduct the current stock
+                foreach (var item in viewModel.StockPosting_Items)
                 {
                     // Following material & quantity will be deducted from the current stock
                     int materialID = item.MaterialID;
@@ -135,15 +166,31 @@ namespace InventoryManagement.Controllers
 
                     Material material = _context.Materials.Find(materialID);
 
-                    if (material.Quantity < quantity)
+
+                    // Work Order Good Issue
+                    if (viewModel.StockPosting_Header.PostingTypeID == PostingType.GoodIssue_WorkOrder)
                     {
-                        // LOW STOCK => TO be implemented (GIVE ERROR MESSAGE)
+                        // Deduct the current stock
+                        if (material.Quantity < quantity)
+                        {
+                            // LOW STOCK => TO be implemented (GIVE ERROR MESSAGE)
+                        }
+                        else
+                        {
+                            material.Quantity = material.Quantity - quantity;
+                        }
+
                     }
-                    else
+                    // Work Order Good Receipt
+                    else if (viewModel.StockPosting_Header.PostingTypeID == PostingType.GoodReceipt_WorkOrder)
                     {
-                        material.Quantity = material.Quantity - quantity;
+                        // Add to current stock
+                        material.Quantity = material.Quantity + quantity;
                     }
-                    
+
+
+
+
 
                 }
 
@@ -163,7 +210,7 @@ namespace InventoryManagement.Controllers
 
             _context.SaveChanges();
 
-            return RedirectToAction("EnterReferenceOrder", "StockPosting", new { PostingType = 2});
+            return RedirectToAction("EnterReferenceOrder", "StockPosting", new { PostingType = viewModel.StockPosting_Header.PostingTypeID });
 
         }
 
