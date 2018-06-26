@@ -241,3 +241,9 @@ E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManage
 E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.csproj.CopyComplete
 E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.dll
 E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.pdb
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.AddMaterialAndBOMTable.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.AddWOTables.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.AddStockPostingTables.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.UpdateStatusFieldsForWO.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.Add_PO_SO_Tables.resources
+E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Release\InventoryManagement.Migrations.ADDConstraintsToTables.resources
