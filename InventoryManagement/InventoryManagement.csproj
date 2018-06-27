@@ -263,6 +263,10 @@
     <Compile Include="Migrations\201806260249350_ChangeType.Designer.cs">
       <DependentUpon>201806260249350_ChangeType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806260409292_TestMigration.cs" />
+    <Compile Include="Migrations\201806260409292_TestMigration.Designer.cs">
+      <DependentUpon>201806260409292_TestMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BOM_Header.cs" />
@@ -573,6 +577,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806260249350_ChangeType.resx">
       <DependentUpon>201806260249350_ChangeType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806260409292_TestMigration.resx">
+      <DependentUpon>201806260409292_TestMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
