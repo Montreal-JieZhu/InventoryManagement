@@ -28,7 +28,8 @@ namespace InventoryManagement
                       "~/Content/site.css"));
             //Below are our own style and script files
             bundles.Add(new StyleBundle("~/MyLayoutStyle/css").Include(
-                "~/assets/vendor/bootstrap/css/bootstrap.min.css",
+                 "~/Content/site.css",
+            "~/assets/vendor/bootstrap/css/bootstrap.min.css",
                       "~/assets/vendor/font-awesome/css/font-awesome.css",                     
                       "~/assets/vendor/chartist/css/chartist-custom.css",
                       "~/assets/css/*.css",
