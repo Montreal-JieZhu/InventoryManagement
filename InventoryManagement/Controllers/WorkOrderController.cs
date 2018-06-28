@@ -25,10 +25,12 @@ namespace InventoryManagement.Controllers
         // GET: WorkOrder
         public ActionResult Index()
         {
-            return View();
+            var allWorkOrders = _context.WO_Headers.Include(w => w.Product).Include(w => w.Status).ToList();
+
+            return View(allWorkOrders);
         }
 
-
+        [Authorize(Roles = "Admin, ProductionDept")]
         public ActionResult ChooseProduct()
         {
             // Initialize viewModel object
@@ -44,7 +46,7 @@ namespace InventoryManagement.Controllers
 
         }
 
-
+        [Authorize(Roles = "Admin, ProductionDept")]
         public ActionResult New(ChooseProductViewModel cpViewModel)
         {
             // Inistialize WO items
@@ -53,9 +55,13 @@ namespace InventoryManagement.Controllers
            
             
             // Get BOM based on selected product id
-            var bomHeader = _context.BOM_Headers.Include(b => b.BOM_Items).Where(i => i.ProductID == cpViewModel.SelectedProductID).Single();
+            var bomHeader = _context.BOM_Headers.Include(b => b.BOM_Items).Where(i => i.ProductID == cpViewModel.SelectedProductID).SingleOrDefault();
 
-            
+            // BOM does not exist
+            if (bomHeader == null)
+            {
+                return View("BOMIsNonExistent");
+            }
 
             // Based on bom item list, initialize wo items
 
@@ -131,7 +137,7 @@ namespace InventoryManagement.Controllers
 
             _context.SaveChanges();
 
-            return RedirectToAction("ChooseProduct", "WorkOrder"); 
+            return RedirectToAction("index"); 
 
         }
 

@@ -24,9 +24,11 @@ namespace InventoryManagement.Controllers
         // GET: StockPosting
         public ActionResult Index()
         {
-            return View();
+            var allPosting = _context.StockPosting_Headers.Include(s => s.PostingType).ToList();
+            return View(allPosting);
         }
 
+        [Authorize(Roles = "Admin, WarehouseDept")]
         public ActionResult EnterReferenceOrder(string postingType)
         {
 
@@ -41,7 +43,7 @@ namespace InventoryManagement.Controllers
 
         }
 
-
+        [Authorize(Roles = "Admin, WarehouseDept")]
         public ActionResult New(EnterOrderViewModel eoViewModel)
         {
             // Define view model object
@@ -210,7 +212,7 @@ namespace InventoryManagement.Controllers
 
             _context.SaveChanges();
 
-            return RedirectToAction("EnterReferenceOrder", "StockPosting", new { PostingType = viewModel.StockPosting_Header.PostingTypeID });
+            return RedirectToAction("index");
 
         }
 

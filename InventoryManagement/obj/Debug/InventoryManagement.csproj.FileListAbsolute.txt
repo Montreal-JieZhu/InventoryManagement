@@ -506,3 +506,12 @@ E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManage
 E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.ADDConstraintsToTables.resources
 E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Debug\InventoryManagement.csprojResolveAssemblyReference.cache
 E:\朱杰的文档\学习资料\JohnAbbott\ASPDotNet\TeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.TestMigration.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.AddStatusTypeTableAndChangeFields.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.PopulateDataForTypeAndStatusTable.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.ChangeDBSetName.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.AddMaterialCodeIntoMaterialTable.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.ChangePostingType.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.UpdatePostingType.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.AddNewPostingType.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.ChangeType.resources
+D:\BitBucket\ASPTeamProject\InventoryManagement\obj\Debug\InventoryManagement.Migrations.TestMigration.resources

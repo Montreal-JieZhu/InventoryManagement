@@ -1,0 +1,49 @@
+﻿@model IEnumerable<InventoryManagement.Models.WO_Header>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyMasterLayout.cshtml";
+}
+
+<h2>All Work Orders in the System</h2>
+
+@if (!Model.Any())
+{
+    <p>There are no Work orders</p>
+}
+else
+{
+    
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Due Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var wo in Model)
+            {
+                <tr>
+                    <td>@wo.ID</td>
+                    <td>@wo.Product.Name</td>
+                    <td>@wo.Quantity</td>
+                    <td>@wo.DueDate.ToShortDateString()</td>
+                    <td>@wo.Status.Name</td>
+                    
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+}
+
+
+
+
+
+

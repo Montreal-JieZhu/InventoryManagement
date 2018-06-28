@@ -1,0 +1,51 @@
+﻿@model IEnumerable<InventoryManagement.Models.StockPosting_Header>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyMasterLayout.cshtml";
+}
+
+<h2>All Stock Posting in the System</h2>
+
+@if (!Model.Any())
+{
+    <p>There are no Stock Posting</p>
+}
+else
+{
+
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Stock Posting ID</th>
+                <th>Refrence Order ID</th>
+                <th>created Date</th>
+                <th>Posting Type</th>
+        
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sp in Model)
+            {
+                <tr>
+                    <td>@sp.ID</td>
+                    <td>@sp.ReferenceOrderID</td>
+                    <td>@sp.DateCreated.Value.ToShortDateString()</td>
+                    <td>@sp.PostingType.Type</td>
+
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+}
+
+
+
+
+
+
+
+

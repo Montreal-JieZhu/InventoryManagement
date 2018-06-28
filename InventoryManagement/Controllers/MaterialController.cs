@@ -39,6 +39,7 @@ namespace InventoryManagement.Controllers
             return View(materials);
         }
 
+        [Authorize(Roles = "Admin, ProductionDept")]
         public ActionResult New()
         {
 
@@ -96,6 +97,7 @@ namespace InventoryManagement.Controllers
 
         }
 
+        [Authorize(Roles = "Admin, ProductionDept")]
         public ActionResult Edit(int id)
         {
             // Get material by ID
@@ -117,6 +119,7 @@ namespace InventoryManagement.Controllers
             return View("MaterialForm", viewModel);
         }
 
+        [Authorize(Roles = "Admin, ProductionDept")]
         public ActionResult Delete(int? id)
         {
 

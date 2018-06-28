@@ -31,6 +31,7 @@ namespace InventoryManagement.Controllers
             return View(BOMHeaderList);
         }
 
+        [Authorize(Roles = "Admin, ProductionDept")]
         public ActionResult New()
         {
             // Initialize 10(?) BOM Items
@@ -54,6 +55,7 @@ namespace InventoryManagement.Controllers
 
         }
 
+        [Authorize(Roles = "Admin, ProductionDept")]
         public ActionResult Edit(int id)
         {
             BOM_Header bomHeader = _context.BOM_Headers.Find(id);

@@ -198,6 +198,8 @@
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MaterialController.cs" />
+    <Compile Include="Controllers\PurchaseOrderController.cs" />
+    <Compile Include="Controllers\SalesOrderController.cs" />
     <Compile Include="Controllers\StockPostingController.cs" />
     <Compile Include="Controllers\WorkOrderController.cs" />
     <Compile Include="Global.asax.cs">
@@ -504,12 +506,11 @@
     <Content Include="Views\Shared\_MyMasterLayout.cshtml" />
     <Content Include="Views\HomePage\Index.cshtml" />
     <Content Include="Views\Shared\_MyNavbar.cshtml" />
-    <Content Include="Views\Shared\_MyLeftSideBar.cshtml" />
+    <Content Include="Views\Shared\_MyLeftSideBarAdmin.cshtml" />
     <Content Include="Views\Shared\cachePage.cshtml" />
     <Content Include="Views\ExampleForm\CreatePO.cshtml" />
     <Content Include="Views\Material\Index.cshtml" />
     <Content Include="Views\Material\MaterialForm.cshtml" />
-    <Content Include="Views\Material\MaterialForm - Copy.cshtml" />
     <Content Include="Views\Material\Delete.cshtml" />
     <Content Include="Views\BOM\BOMForm.cshtml" />
     <Content Include="Views\BOM\Index.cshtml" />
@@ -517,9 +518,19 @@
     <Content Include="Views\WorkOrder\WorkOrderForm.cshtml" />
     <Content Include="Views\StockPosting\EnterOrderForm.cshtml" />
     <Content Include="Views\StockPosting\StockPostingForm.cshtml" />
+    <Content Include="Views\WorkOrder\Index.cshtml" />
+    <Content Include="Views\WorkOrder\BOMIsNonExistent.cshtml" />
+    <Content Include="Views\StockPosting\Index.cshtml" />
+    <Content Include="Views\Shared\UnderConstruction.cshtml" />
+    <None Include="Views\Shared\_MyLeftSideBarWarehouse.cshtml" />
+    <Content Include="Views\Shared\_MyLeftSideBarProduction.cshtml" />
+    <None Include="Views\Shared\_MyLeftSideBarSales.cshtml" />
+    <None Include="Views\Shared\_MyLeftSideBarProcurement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\PurchaseOrder\" />
+    <Folder Include="Views\SalesOrder\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
