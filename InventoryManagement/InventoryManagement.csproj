@@ -200,6 +200,7 @@
     <Compile Include="Controllers\MaterialController.cs" />
     <Compile Include="Controllers\PurchaseOrderController.cs" />
     <Compile Include="Controllers\SalesOrderController.cs" />
+    <Compile Include="Controllers\ShowDataController.cs" />
     <Compile Include="Controllers\StockPostingController.cs" />
     <Compile Include="Controllers\WorkOrderController.cs" />
     <Compile Include="Global.asax.cs">
@@ -294,6 +295,7 @@
     <Compile Include="ViewModels\BOMFormViewModel.cs" />
     <Compile Include="ViewModels\ChooseProductViewModel.cs" />
     <Compile Include="ViewModels\EnterOrderViewModel.cs" />
+    <Compile Include="ViewModels\HomePageViewModel.cs" />
     <Compile Include="ViewModels\MaterialFormViewModel.cs" />
     <Compile Include="ViewModels\StockPostingViewModel.cs" />
     <Compile Include="ViewModels\WorkOrderViewModel.cs" />
@@ -531,6 +533,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\PurchaseOrder\" />
     <Folder Include="Views\SalesOrder\" />
+    <Folder Include="Views\ShowData\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

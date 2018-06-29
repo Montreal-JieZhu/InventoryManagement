@@ -33,7 +33,35 @@
         @Html.Partial("_MyNavbar")
         <!-- END NAVBAR -->
         <!-- LEFT SIDEBAR -->
-        @Html.Partial("_MyLeftSideBar")
+
+        @if (User.IsInRole("Admin"))
+    {
+        @Html.Partial("_MyLeftSideBarAdmin")
+}
+else if (User.IsInRole("ProcurementDept"))
+{
+    @Html.Partial("_MyLeftSideBarProcurement")
+}
+else if (User.IsInRole("ProductionDept"))
+{
+    @Html.Partial("_MyLeftSideBarProduction")
+}
+else if (User.IsInRole("SalesDept"))
+{
+    @Html.Partial("_MyLeftSideBarSales")
+}
+else if (User.IsInRole("WarehouseDept"))
+{
+    @Html.Partial("_MyLeftSideBarWarehouse")
+}
+else
+{
+    @Html.Partial("_MyLeftSideBarWarehouse")
+}
+
+
+
+
 
         <!-- END LEFT SIDEBAR -->
         <!-- MAIN -->
@@ -41,7 +69,7 @@
             <!-- MAIN CONTENT -->
             <div class="main-content">
                 <div class="container-fluid">
-                    @RenderBody()                   
+                    @RenderBody()
                 </div>
             </div>
             <!-- END MAIN CONTENT -->
