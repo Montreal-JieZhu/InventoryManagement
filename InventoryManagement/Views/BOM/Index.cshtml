@@ -33,8 +33,9 @@ else
                     <td>@BOM.Product.Name</td>
                    
                     <td>
-                        @Html.ActionLink("Edit", "Edit", "BOM", new { id = BOM.ID }, null) |
-                        @Html.ActionLink("Delete", "Delete", "Delete", new { id = BOM.ID }, null)
+                        @Html.ActionLink("Details", "Details", "BOM", new { id = BOM.ID }, null) |
+                        @Html.ActionLink("Edit", "UnderConstruction", "BOM", new { id = BOM.ID }, null) |
+                        @Html.ActionLink("Delete", "UnderConstruction", "BOM", new { id = BOM.ID }, null)
                     </td>
                 </tr>
 

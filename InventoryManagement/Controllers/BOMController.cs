@@ -56,7 +56,7 @@ namespace InventoryManagement.Controllers
         }
 
         [Authorize(Roles = "Admin, ProductionDept")]
-        public ActionResult Edit(int id)
+        public ActionResult Details(int id)
         {
             BOM_Header bomHeader = _context.BOM_Headers.Find(id);
             List<BOM_Item> bomItems = _context.BOM_Items.Where(i => i.BOM_HeaderID == bomHeader.ID).ToList();
@@ -70,7 +70,7 @@ namespace InventoryManagement.Controllers
                 RawMaterials = _context.Materials.Where(m => m.MaterialTypeID == MaterialType.RawMaterial).ToList()
             };
 
-            return View("BOMForm", viewModel);
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -123,6 +123,12 @@ namespace InventoryManagement.Controllers
             return RedirectToAction("Index", "BOM");
 
 
+        }
+
+        // Go to Page is under construction View
+        public ActionResult UnderConstruction()
+        {
+            return View();
         }
     }
 }
