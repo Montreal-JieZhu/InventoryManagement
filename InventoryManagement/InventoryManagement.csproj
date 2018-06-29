@@ -524,10 +524,14 @@
     <Content Include="Views\WorkOrder\BOMIsNonExistent.cshtml" />
     <Content Include="Views\StockPosting\Index.cshtml" />
     <Content Include="Views\Shared\UnderConstruction.cshtml" />
+    <Content Include="Views\Shared\_MyLeftSideBarSales2.cshtml" />
+    <Content Include="Views\Shared\_MyLeftSideBarProduction2.cshtml" />
+    <Content Include="Views\Shared\_MyLeftSideBarProcurement2.cshtml" />
     <None Include="Views\Shared\_MyLeftSideBarWarehouse.cshtml" />
     <Content Include="Views\Shared\_MyLeftSideBarProduction.cshtml" />
     <None Include="Views\Shared\_MyLeftSideBarSales.cshtml" />
     <None Include="Views\Shared\_MyLeftSideBarProcurement.cshtml" />
+    <Content Include="Views\Shared\_MyLeftSideBarWarehouse2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

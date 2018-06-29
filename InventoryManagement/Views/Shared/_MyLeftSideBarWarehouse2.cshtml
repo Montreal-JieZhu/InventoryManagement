@@ -1,0 +1,19 @@
+﻿<div id="sidebar-nav" class="sidebar">
+    <div class="sidebar-scroll">
+        <nav>
+            <ul class="nav">
+                <li>
+                    <a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="lnr lnr-dice"></i> <span>Stock Posting</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                    <div id="subPages5" class="collapse ">
+                        <ul class="nav">
+                            <li>@Html.ActionLink("PO - Good Receipt", "UnderConstruction", "PurchaseOrder")</li>
+                            <li>@Html.ActionLink("WO - Good Issue", "EnterReferenceOrder", "StockPosting", new { PostingType = 2 }, null)</li>
+                            <li>@Html.ActionLink("WO - Good Receipt", "EnterReferenceOrder", "StockPosting", new { PostingType = 3 }, null)</li>
+                            <li>@Html.ActionLink("SO - Good Issue", "UnderConstruction", "SalesOrder")</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

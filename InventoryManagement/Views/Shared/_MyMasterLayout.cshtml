@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
- 
+
     @Scripts.Render("~/bundles/modernizr")
 
     @Styles.Render("~/MyLayoutStyle/css")
@@ -35,29 +35,29 @@
         <!-- LEFT SIDEBAR -->
 
         @if (User.IsInRole("Admin"))
-    {
-        @Html.Partial("_MyLeftSideBarAdmin")
-}
-else if (User.IsInRole("ProcurementDept"))
-{
-    @Html.Partial("_MyLeftSideBarProcurement")
-}
-else if (User.IsInRole("ProductionDept"))
-{
-    @Html.Partial("_MyLeftSideBarProduction")
-}
-else if (User.IsInRole("SalesDept"))
-{
-    @Html.Partial("_MyLeftSideBarSales")
-}
-else if (User.IsInRole("WarehouseDept"))
-{
-    @Html.Partial("_MyLeftSideBarWarehouse")
-}
-else
-{
-    @Html.Partial("_MyLeftSideBarWarehouse")
-}
+        {
+            @Html.Partial("_MyLeftSideBarAdmin")
+        }
+        else if (User.IsInRole("ProcurementDept"))
+        {
+            @Html.Partial("_MyLeftSideBarProcurement2")
+        }
+        else if (User.IsInRole("ProductionDept"))
+        {
+            @Html.Partial("_MyLeftSideBarProduction2")
+        }
+        else if (User.IsInRole("SalesDept"))
+        {
+            @Html.Partial("_MyLeftSideBarSales2")
+        }
+        else if (User.IsInRole("WarehouseDept"))
+        {
+            @Html.Partial("_MyLeftSideBarWarehouse2")
+        }
+        else
+        {
+            @Html.Partial("_MyLeftSideBarWarehouse2")
+        }
 
 
 
@@ -101,7 +101,7 @@ else
 
 
 
-  
+
 
 </body>
 
