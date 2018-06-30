@@ -40,28 +40,21 @@
         }
         else if (User.IsInRole("ProcurementDept"))
         {
-            @Html.Partial("_MyLeftSideBarProcurement2")
+            @Html.Partial("_MyLeftSideBarProcurement")
         }
         else if (User.IsInRole("ProductionDept"))
         {
-            @Html.Partial("_MyLeftSideBarProduction2")
+            @Html.Partial("_MyLeftSideBarProduction")
         }
         else if (User.IsInRole("SalesDept"))
         {
-            @Html.Partial("_MyLeftSideBarSales2")
+            @Html.Partial("_MyLeftSideBarSales")
         }
         else if (User.IsInRole("WarehouseDept"))
         {
-            @Html.Partial("_MyLeftSideBarWarehouse2")
+            @Html.Partial("_MyLeftSideBarWarehouse")
         }
-        else
-        {
-            @Html.Partial("_MyLeftSideBarWarehouse2")
-        }
-
-
-
-
+        
 
         <!-- END LEFT SIDEBAR -->
         <!-- MAIN -->
